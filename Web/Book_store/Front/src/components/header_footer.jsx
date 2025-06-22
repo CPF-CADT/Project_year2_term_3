@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { FaUser, FaShoppingBag, FaHeart } from "react-icons/fa";
 export function LoginHeader() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-pink-200 to-white text-gray-800 p-4">
@@ -35,9 +37,80 @@ export function LoginHeader() {
   );
 }
 
+
+export function HomeHeader() {
+  return (
+    <header className="w-full bg-white shadow-sm">
+      <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+        {/* Avatar */}
+        <div className="flex items-center">
+          <img
+            src="/avatar.png"
+            alt="avatar"
+            className="w-16 h-16 rounded-full border object-cover"
+          />
+        </div>
+        {/* Navigation */}
+        <nav className="flex-1 flex items-center justify-center space-x-6">
+          <Link
+            to="/"
+            className="text-red-500 font-bold tracking-widest border-r border-gray-200 pr-6"
+          >
+            HOME
+          </Link>
+          <Link
+            to="/about"
+            className="text-black font-semibold tracking-widest hover:text-red-500 border-r border-gray-200 px-6"
+          >
+            ABOUT US
+          </Link>
+          <Link
+            to="/books"
+            className="text-black font-semibold tracking-widest hover:text-red-500 border-r border-gray-200 px-6"
+          >
+            BOOKS
+          </Link>
+          <Link
+            to="/new-release"
+            className="text-black font-semibold tracking-widest hover:text-red-500 border-r border-gray-200 px-6"
+          >
+            NEW RELEASE
+          </Link>
+          <Link
+            to="/contact"
+            className="text-black font-semibold tracking-widest hover:text-red-500 border-r border-gray-200 px-6"
+          >
+            CONTACT US
+          </Link>
+          <Link
+            to="/blog"
+            className="text-black font-semibold tracking-widest hover:text-red-500 px-6"
+          >
+            BLOG
+          </Link>
+        </nav>
+        {/* Icons */}
+        <div className="flex items-center space-x-6">
+          <Link to="/profile" className="text-red-500 text-xl hover:text-red-200">
+            <FaUser />
+          </Link>
+          <span className="border-r border-gray-200 h-6"></span>
+          <Link to="/cart" className="text-red-500 text-xl hover:text-red-200">
+            <FaShoppingBag />
+          </Link>
+          <span className="border-r border-gray-200 h-6"></span>
+          <Link to="/wishlist" className="text-red-500 text-xl hover:text-red-200">
+            <FaHeart />
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+}
+
 export function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 w-full z-50 bg-red-500 text-white p-6">
+    <footer className=" bottom-0 left-0 w-full z-50 bg-red-500 text-white p-6">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Company Info */}
         <div>
